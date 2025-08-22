@@ -6,9 +6,14 @@ import router from './router'
 
 import 'vuetify/styles'
 import { createVuetify } from 'vuetify'
+import '@mdi/font/css/materialdesignicons.css' // mdi 图标
 
 const app = createApp(App)
-const vuetify = createVuetify()
+const vuetify = createVuetify({
+  icons: {
+    defaultSet: 'mdi', // 使用 mdi 图标
+  },
+})
 
 app.use(createPinia())
 app.use(router)

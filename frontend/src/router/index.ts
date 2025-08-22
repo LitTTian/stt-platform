@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import HomePage from '../views/HomePage.vue'
+import Post from '../post/Post.vue'
 // import About from '../views/About.vue'  // 假设你有 About 页面
 
 // 定义路由数组，类型为 RouteRecordRaw[]
@@ -9,6 +10,12 @@ const routes: Array<RouteRecordRaw> = [
     name: 'Home',
     component: HomePage
   },
+  {
+    path: '/post/:id',
+    name: 'Post',
+    component: Post,
+    props: true // ✅ 让 postId 可以作为 props 传给 Post.vue
+  }
   // {
   //   path: '/about',
   //   name: 'About',
